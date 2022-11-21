@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "dev": "concurrently --kill-others npm:watch  npm:start:standalone",
     "build": "tsc",
     "watch": "tsc -w",
     "prestart": "npm run build",
     "start": "func start",
+    "start:standalone": "func start",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {},
   "devDependencies": {
     "@azure/functions": "^3.0.0",
     "@types/node": "16.x",
+    "concurrently": "^7.6.0",
     "typescript": "^4.0.0"
   }
 }
